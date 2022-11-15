@@ -19,7 +19,7 @@ flex-grow: 1;
 cursor: pointer;
 transition: .3s;
                 background-color: gray;
-                &:not(last-child) {
+                &:not(:last-child) {
                     margin-right: 10px;
                 }
                 &--active {

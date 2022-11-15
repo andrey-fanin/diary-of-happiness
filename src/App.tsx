@@ -4,6 +4,7 @@ import Card from "./components/Card";
 import Home from "./components/Home";
 import DayPage from "./pages/DayPage";
 import "./App.css";
+import CalendarPage from "./pages/CalendarPage";
 
 export default function App() {
   return (
@@ -12,8 +13,8 @@ export default function App() {
         <Route path="/card:id" element={<Card />} />
         <Route path="/" element={<Home />} />
         <Route path="/moment" element={<DayPage />} />
+        <Route path="/calendar" element={<CalendarPage />} />
       </Routes>
     </div>
   );
 }
-

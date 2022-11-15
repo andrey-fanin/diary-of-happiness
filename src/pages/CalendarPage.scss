@@ -1,0 +1,64 @@
+.container {
+    &--calendar {
+
+        display: flex;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+}
+
+.calendar-wrapper {
+    width: 100%;
+}
+.calendar-content {
+    
+max-width: 318px;    
+margin-inline: auto;
+}
+.month-title {
+    align-self: flex-start;
+}
+.month-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.month-moments__list {
+    display: flex;
+    flex-wrap: wrap;
+gap: 10px;
+}
+
+.month-moments__item {  
+    width: 96px;
+    height: 96px;
+    position: relative;
+
+    background-color: #575757;
+    &:hover {
+        .moment-delete__svg {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.moment__main-img {
+    width: 100%;
+    height: 100%;
+}
+.moment-delete__svg {
+    position: absolute;
+    visibility: hidden;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s;
+    top: 0;
+       right: 0;
+}
+.moment-collection__svg {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

@@ -1,15 +1,22 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./DayPage.scss";
 const DayPage: FunctionComponent = () => {
   const { id } = useParams();
   const [moment, setMoment] = useState({ img: "" });
+  const [loaded, setLoaded] = useState(false);
+
   const moments = [
     { img: "test" },
     { img: "new" },
     { img: "kek" },
     { img: "less" },
   ];
+  useEffect(() => {
+    if (loaded) return;
+    setMoment(moments[1]);
+    setLoaded(true);
+  }, [loaded]);
 
   return (
     <>
@@ -36,6 +43,7 @@ const DayPage: FunctionComponent = () => {
                     className={`carousel-item ${
                       moment.img === item.img ? "carousel-item--active" : ""
                     }`}
+                    key={item.img}
                     onClick={() => setMoment(item)}
                   ></li>
                 ))}
