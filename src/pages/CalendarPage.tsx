@@ -1,7 +1,14 @@
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, {
+  FunctionComponent,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import "./CalendarPage.scss";
+import Modal from "../components/Modal";
 
 const CalendarPage: FunctionComponent = () => {
+  const [active, setActive] = useState(false);
   const moments = [
     { img: "src/assets/img.jpg" },
     { img: "test1", img1: "kek" },
@@ -48,7 +55,12 @@ const CalendarPage: FunctionComponent = () => {
           </div>
         </div>
       </div>
-      <button>Добавить момент</button>
+      <button onClick={() => setActive(true)}>Добавить момент</button>
+      {active && (
+        <Modal active={active} setActive={setActive}>
+          <h1>asdasd</h1>
+        </Modal>
+      )}
     </>
   );
 };

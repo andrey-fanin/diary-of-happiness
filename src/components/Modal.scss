@@ -1,0 +1,27 @@
+.bg {
+    opacity: 0.5;
+    backdrop-filter: blur(1px) brightness(.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    
+}
+.modal {
+    position: fixed;
+    width: 80vw;
+    height: 50vh;
+    background: green;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: fadeIn .3s;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
