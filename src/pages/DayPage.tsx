@@ -5,6 +5,7 @@ const DayPage: FunctionComponent = () => {
   const { id } = useParams();
   const [moment, setMoment] = useState({ img: "" });
   const [loaded, setLoaded] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const moments = [
     { img: "test" },
@@ -29,12 +30,22 @@ const DayPage: FunctionComponent = () => {
                 <div className="carousel__active-img__wrap">
                   <img src={moment?.img} alt="#" />
                 </div>
-                <div className="carousel__active-img__dropdown">
-                  <div className="dropdown__menu">
-                    <svg>
-                      <path></path>
-                    </svg>
-                  </div>
+                <div
+                  className="carousel__active-img__dropdown"
+                  onClick={() => setShowDropdown(true)}
+                >
+                  {showDropdown && (
+                    <div className="dropdown__menu">
+                      <ul className="dropdown__content-list">
+                        <li className="dropdown__content-item">
+                          Сделать титульным
+                        </li>
+                        <li className="dropdown__content-item">
+                          Удалить момент
+                        </li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
               <ul className="carousel-list">
